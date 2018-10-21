@@ -41,6 +41,12 @@ codes. Here is how they compare to each other:
   + WHO includes traffic related parts (often .0-.3) V83-V99 and Y850
     while GBD only includes V87.2 and V87.3
 
+Here is how we map GBD death causes to our cause entity domain:
+
+- traffic: C.1.1,Road injuries
+- homocide: C.3.2,Interpersonal violence
+- suicide: C.3.1,Self-harm
+
 [1]: http://www.who.int/violence_injury_prevention/surveillance/injury_mortality_trend_tables.xls
 
 [2]: http://ghdx.healthdata.org/record/global-burden-disease-study-2016-gbd-2016-causes-death-and-nonfatal-causes-mapped-icd-codes
