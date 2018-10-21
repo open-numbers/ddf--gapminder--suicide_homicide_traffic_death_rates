@@ -9,14 +9,16 @@ several age groups.
 
 ## Data sources summary
 
-Data before 1990 come form WHO [Violence and Injury Prevention dataset](http://www.who.int/violence_injury_prevention/en/), and
-data after 1990 come from IHME [Global Burden of Disease dataset](http://ghdx.healthdata.org/gbd-results-tool).
+Data before 1990 come form WHO [Violence and Injury Prevention
+dataset](http://www.who.int/violence_injury_prevention/en/), and data
+after 1990 come from IHME [Global Burden of Disease
+dataset](http://ghdx.healthdata.org/gbd-results-tool).
 
-Please note that there are some differences between WHO's definition
-and IHME's definition for suicide/homicide/traffic accidents.  Both of
-them use ICD system: the 3 causes of death are defined by a group of
-ICD codes. In some cases, they use different codes. Here is how they
-compare to each other:
+Please note that there are some differences between [WHO's
+definition][1] and [IHME's definition][2] for suicide/homicide/traffic
+accidents.  Both of them use ICD system: the 3 causes of death are
+defined by a group of ICD codes. In some cases, they use different
+codes. Here is how they compare to each other:
 
 - for suicide and homicide, WHO and GBD use same ICD9 codes. For
   traffic accident, ICD9 column is empty in the GBD doc, so not sure
@@ -38,3 +40,7 @@ compare to each other:
     traffic accident)
   + WHO includes traffic related parts (often .0-.3) V83-V99 and Y850
     while GBD only includes V87.2 and V87.3
+
+[1]: http://www.who.int/violence_injury_prevention/surveillance/injury_mortality_trend_tables.xls
+
+[2]: http://ghdx.healthdata.org/record/global-burden-disease-study-2016-gbd-2016-causes-death-and-nonfatal-causes-mapped-icd-codes
