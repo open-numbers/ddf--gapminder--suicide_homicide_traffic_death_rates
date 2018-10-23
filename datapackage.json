@@ -1,16 +1,16 @@
 {
     "name": "ddf--gapminder--suicide_homicide_traffic_death_rates",
     "language": {
-        "name": "English",
         "id": "en"
     },
-    "author": "Gapminder",
-    "description": " Suicide, Homicide, Traffic mortality",
-    "license": "CC-BY-4.0",
-    "title": "Suicide, Homicide, Traffic mortality",
+    "base": [
+        "open-numbers/ddf--who--violence_injury_prevention",
+        "open-numbers/ddf--ihme--death_cause_compact",
+        "open-numbers/ddf--gapminder--geo_entity_domain"
+    ],
+    "id": "who-gbd-vip-dataset",
     "translations": [],
-    "version": "0.0.1",
-    "created": "2018-10-10T12:39:59.415813+00:00",
+    "created": "2018-10-23T15:54:08.930159+00:00",
     "resources": [
         {
             "path": "ddf--concepts.csv",
@@ -21,185 +21,185 @@
                         "name": "concept"
                     },
                     {
-                        "name": "name"
+                        "name": "concept_type"
                     },
                     {
-                        "name": "concept_type"
+                        "name": "name"
                     }
                 ],
                 "primaryKey": "concept"
             }
         },
         {
-            "path": "ddf--datapoints--deaths_rate_0_14--by--geo--sex--cause--year.csv",
-            "name": "ddf--datapoints--deaths_rate_0_14--by--geo--sex--cause--year",
+            "path": "ddf--datapoints--death_rate_0_14--by--cause--country--sex--year.csv",
+            "name": "ddf--datapoints--death_rate_0_14--by--cause--country--sex--year",
             "schema": {
                 "fields": [
                     {
-                        "name": "geo"
+                        "name": "cause"
+                    },
+                    {
+                        "name": "country"
                     },
                     {
                         "name": "sex"
                     },
                     {
-                        "name": "cause"
-                    },
-                    {
                         "name": "year"
                     },
                     {
-                        "name": "deaths_rate_0_14"
+                        "name": "death_rate_0_14"
                     }
                 ],
                 "primaryKey": [
-                    "geo",
-                    "sex",
                     "cause",
+                    "country",
+                    "sex",
                     "year"
                 ]
             }
         },
         {
-            "path": "ddf--datapoints--deaths_rate_15_29--by--geo--sex--cause--year.csv",
-            "name": "ddf--datapoints--deaths_rate_15_29--by--geo--sex--cause--year",
+            "path": "ddf--datapoints--death_rate_15_29--by--cause--country--sex--year.csv",
+            "name": "ddf--datapoints--death_rate_15_29--by--cause--country--sex--year",
             "schema": {
                 "fields": [
                     {
-                        "name": "geo"
+                        "name": "cause"
+                    },
+                    {
+                        "name": "country"
                     },
                     {
                         "name": "sex"
                     },
                     {
-                        "name": "cause"
-                    },
-                    {
                         "name": "year"
                     },
                     {
-                        "name": "deaths_rate_15_29"
+                        "name": "death_rate_15_29"
                     }
                 ],
                 "primaryKey": [
-                    "geo",
-                    "sex",
                     "cause",
+                    "country",
+                    "sex",
                     "year"
                 ]
             }
         },
         {
-            "path": "ddf--datapoints--deaths_rate_30_44--by--geo--sex--cause--year.csv",
-            "name": "ddf--datapoints--deaths_rate_30_44--by--geo--sex--cause--year",
+            "path": "ddf--datapoints--death_rate_30_44--by--cause--country--sex--year.csv",
+            "name": "ddf--datapoints--death_rate_30_44--by--cause--country--sex--year",
             "schema": {
                 "fields": [
                     {
-                        "name": "geo"
+                        "name": "cause"
+                    },
+                    {
+                        "name": "country"
                     },
                     {
                         "name": "sex"
                     },
                     {
-                        "name": "cause"
-                    },
-                    {
                         "name": "year"
                     },
                     {
-                        "name": "deaths_rate_30_44"
+                        "name": "death_rate_30_44"
                     }
                 ],
                 "primaryKey": [
-                    "geo",
-                    "sex",
                     "cause",
+                    "country",
+                    "sex",
                     "year"
                 ]
             }
         },
         {
-            "path": "ddf--datapoints--deaths_rate_45_59--by--geo--sex--cause--year.csv",
-            "name": "ddf--datapoints--deaths_rate_45_59--by--geo--sex--cause--year",
+            "path": "ddf--datapoints--death_rate_45_59--by--cause--country--sex--year.csv",
+            "name": "ddf--datapoints--death_rate_45_59--by--cause--country--sex--year",
             "schema": {
                 "fields": [
                     {
-                        "name": "geo"
+                        "name": "cause"
+                    },
+                    {
+                        "name": "country"
                     },
                     {
                         "name": "sex"
                     },
                     {
-                        "name": "cause"
-                    },
-                    {
                         "name": "year"
                     },
                     {
-                        "name": "deaths_rate_45_59"
+                        "name": "death_rate_45_59"
                     }
                 ],
                 "primaryKey": [
-                    "geo",
-                    "sex",
                     "cause",
+                    "country",
+                    "sex",
                     "year"
                 ]
             }
         },
         {
-            "path": "ddf--datapoints--deaths_rate_60plus--by--geo--sex--cause--year.csv",
-            "name": "ddf--datapoints--deaths_rate_60plus--by--geo--sex--cause--year",
+            "path": "ddf--datapoints--death_rate_60plus--by--cause--country--sex--year.csv",
+            "name": "ddf--datapoints--death_rate_60plus--by--cause--country--sex--year",
             "schema": {
                 "fields": [
                     {
-                        "name": "geo"
+                        "name": "cause"
+                    },
+                    {
+                        "name": "country"
                     },
                     {
                         "name": "sex"
                     },
                     {
-                        "name": "cause"
-                    },
-                    {
                         "name": "year"
                     },
                     {
-                        "name": "deaths_rate_60plus"
+                        "name": "death_rate_60plus"
                     }
                 ],
                 "primaryKey": [
-                    "geo",
-                    "sex",
                     "cause",
+                    "country",
+                    "sex",
                     "year"
                 ]
             }
         },
         {
-            "path": "ddf--datapoints--deaths_rate_all_ages--by--geo--sex--cause--year.csv",
-            "name": "ddf--datapoints--deaths_rate_all_ages--by--geo--sex--cause--year",
+            "path": "ddf--datapoints--death_rate_all_age--by--cause--country--sex--year.csv",
+            "name": "ddf--datapoints--death_rate_all_age--by--cause--country--sex--year",
             "schema": {
                 "fields": [
                     {
-                        "name": "geo"
+                        "name": "cause"
+                    },
+                    {
+                        "name": "country"
                     },
                     {
                         "name": "sex"
                     },
                     {
-                        "name": "cause"
-                    },
-                    {
                         "name": "year"
                     },
                     {
-                        "name": "deaths_rate_all_ages"
+                        "name": "death_rate_all_age"
                     }
                 ],
                 "primaryKey": [
-                    "geo",
-                    "sex",
                     "cause",
+                    "country",
+                    "sex",
                     "year"
                 ]
             }
@@ -220,18 +220,18 @@
             }
         },
         {
-            "path": "ddf--entities--geo.csv",
-            "name": "ddf--entities--geo",
+            "path": "ddf--entities--country.csv",
+            "name": "ddf--entities--country",
             "schema": {
                 "fields": [
                     {
-                        "name": "geo"
+                        "name": "country"
                     },
                     {
                         "name": "name"
                     }
                 ],
-                "primaryKey": "geo"
+                "primaryKey": "country"
             }
         },
         {
@@ -283,11 +283,11 @@
             },
             {
                 "primaryKey": [
-                    "geo"
+                    "country"
                 ],
                 "value": "name",
                 "resources": [
-                    "ddf--entities--geo"
+                    "ddf--entities--country"
                 ]
             },
             {
@@ -304,73 +304,73 @@
             {
                 "primaryKey": [
                     "cause",
-                    "geo",
+                    "country",
                     "sex",
                     "year"
                 ],
-                "value": "deaths_rate_0_14",
+                "value": "death_rate_0_14",
                 "resources": [
-                    "ddf--datapoints--deaths_rate_0_14--by--geo--sex--cause--year"
+                    "ddf--datapoints--death_rate_0_14--by--cause--country--sex--year"
                 ]
             },
             {
                 "primaryKey": [
                     "cause",
-                    "geo",
+                    "country",
                     "sex",
                     "year"
                 ],
-                "value": "deaths_rate_15_29",
+                "value": "death_rate_15_29",
                 "resources": [
-                    "ddf--datapoints--deaths_rate_15_29--by--geo--sex--cause--year"
+                    "ddf--datapoints--death_rate_15_29--by--cause--country--sex--year"
                 ]
             },
             {
                 "primaryKey": [
                     "cause",
-                    "geo",
+                    "country",
                     "sex",
                     "year"
                 ],
-                "value": "deaths_rate_30_44",
+                "value": "death_rate_30_44",
                 "resources": [
-                    "ddf--datapoints--deaths_rate_30_44--by--geo--sex--cause--year"
+                    "ddf--datapoints--death_rate_30_44--by--cause--country--sex--year"
                 ]
             },
             {
                 "primaryKey": [
                     "cause",
-                    "geo",
+                    "country",
                     "sex",
                     "year"
                 ],
-                "value": "deaths_rate_45_59",
+                "value": "death_rate_45_59",
                 "resources": [
-                    "ddf--datapoints--deaths_rate_45_59--by--geo--sex--cause--year"
+                    "ddf--datapoints--death_rate_45_59--by--cause--country--sex--year"
                 ]
             },
             {
                 "primaryKey": [
                     "cause",
-                    "geo",
+                    "country",
                     "sex",
                     "year"
                 ],
-                "value": "deaths_rate_60plus",
+                "value": "death_rate_60plus",
                 "resources": [
-                    "ddf--datapoints--deaths_rate_60plus--by--geo--sex--cause--year"
+                    "ddf--datapoints--death_rate_60plus--by--cause--country--sex--year"
                 ]
             },
             {
                 "primaryKey": [
                     "cause",
-                    "geo",
+                    "country",
                     "sex",
                     "year"
                 ],
-                "value": "deaths_rate_all_ages",
+                "value": "death_rate_all_age",
                 "resources": [
-                    "ddf--datapoints--deaths_rate_all_ages--by--geo--sex--cause--year"
+                    "ddf--datapoints--death_rate_all_age--by--cause--country--sex--year"
                 ]
             }
         ],

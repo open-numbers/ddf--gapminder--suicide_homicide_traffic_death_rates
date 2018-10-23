@@ -1,12 +1,12 @@
-concept,name,concept_type
-deaths_rate_all_ages,Deaths Rate All Ages,measure
-deaths_rate_0_14,Deaths Rate 0 14,measure
-deaths_rate_15_29,Deaths Rate 15 29,measure
-deaths_rate_30_44,Deaths Rate 30 44,measure
-deaths_rate_45_59,Deaths Rate 45 59,measure
-deaths_rate_60plus,Deaths Rate 60Plus,measure
-name,Name,string
-geo,Geo,entity_domain
-sex,Sex,entity_domain
-cause,Cause,entity_domain
-year,Year,time
+concept,concept_type,name
+cause,entity_domain,Cause
+country,entity_domain,Country
+death_rate_0_14,measure,Death Rate 0 14
+death_rate_15_29,measure,Death Rate 15 29
+death_rate_30_44,measure,Death Rate 30 44
+death_rate_45_59,measure,Death Rate 45 59
+death_rate_60plus,measure,Death Rate 60Plus
+death_rate_all_age,measure,Death Rate All Age
+name,string,Name
+sex,entity_domain,Sex
+year,time,Year
