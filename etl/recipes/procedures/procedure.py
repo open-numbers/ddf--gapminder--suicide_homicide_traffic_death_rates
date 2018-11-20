@@ -19,7 +19,12 @@ def _calculate(cdrs, std_pop, age_group_mapping, age_column, data_keys, indicato
     total_pop = sum(std_pop_groups)
     weights = [x/total_pop for x in std_pop_groups]
     assert len(weights) == len(cdrs_groups)
-    rate = sum([w * cdr for w, cdr in zip(weights, cdrs_groups)])
+    zipped = zip(weights, cdrs_groups)
+    w0, cdr0 = next(zipped)
+    rate = w0 * cdr0
+    for w, cdr in zipped:
+        r1, r2 = rate.align(w * cdr)
+        rate = r1.fillna(0) + r2.fillna(0)
     return rate
 
 
@@ -36,6 +41,9 @@ def asdr(chef, ingredients, result, standard_population, age_group_mapping, age_
 
     pop_data = std_pop.compute()[std_pop.key].set_index(std_pop.key)
     cdrs = list(data.values())[0]
+
+    # if indicator_name == 'death_rate_0_14':
+    #     import ipdb; ipdb.set_trace()
 
     # double checking
     for k, vs in age_group_mapping.items():
