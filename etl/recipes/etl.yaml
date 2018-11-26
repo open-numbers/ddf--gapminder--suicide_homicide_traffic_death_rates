@@ -241,7 +241,7 @@ cooking:
                   column:
                       - deaths_rate_all_age
               bridge_on: year
-              bridge_length: 10
+              bridge_length: 5
               target_column:
                   -  death_rate_all_age
 
