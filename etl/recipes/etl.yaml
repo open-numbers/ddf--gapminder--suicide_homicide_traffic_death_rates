@@ -12,6 +12,8 @@ info:
         - &who open-numbers/ddf--who--violence_injury_prevention
         - &gbd open-numbers/ddf--ihme--death_cause_compact
         - &geo open-numbers/ddf--gapminder--geo_entity_domain
+    parameters:
+        - &bridge_length: 10
 
 config:
     external_csv_dir: ../source
@@ -241,7 +243,7 @@ cooking:
                   column:
                       - deaths_rate_all_age
               bridge_on: year
-              bridge_length: 3
+              bridge_length: *bridge_length
               target_column:
                   -  death_rate_all_age
 
@@ -292,7 +294,7 @@ cooking:
                   column:
                       - death_rate_0_14
               bridge_on: year
-              bridge_length: 3
+              bridge_length: *bridge_length
               target_column:
                   -  death_rate_0_14
 
@@ -342,7 +344,7 @@ cooking:
                   column:
                       - death_rate_15_29
               bridge_on: year
-              bridge_length: 3
+              bridge_length: *bridge_length
               target_column:
                   -  death_rate_15_29
         # 30-44
@@ -390,7 +392,7 @@ cooking:
                   column:
                       - death_rate_30_44
               bridge_on: year
-              bridge_length: 3
+              bridge_length: *bridge_length
               target_column:
                   -  death_rate_30_44
         # 45-59
@@ -439,7 +441,7 @@ cooking:
                   column:
                       - death_rate_45_59
               bridge_on: year
-              bridge_length: 3
+              bridge_length: *bridge_length
               target_column:
                   -  death_rate_45_59
         # 60plus
@@ -498,7 +500,7 @@ cooking:
                   column:
                       - death_rate_60plus
               bridge_on: year
-              bridge_length: 3
+              bridge_length: *bridge_length
               target_column:
                   -  death_rate_60plus
 
