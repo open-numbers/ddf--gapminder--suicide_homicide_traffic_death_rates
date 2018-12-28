@@ -13,7 +13,7 @@ info:
         - &gbd open-numbers/ddf--ihme--death_cause_compact
         - &geo open-numbers/ddf--gapminder--geo_entity_domain
     parameters:
-        - &bridge_length: 10
+        - bridge_length: &bridge_length 10
 
 config:
     external_csv_dir: ../source
@@ -504,7 +504,7 @@ cooking:
               target_column:
                   -  death_rate_60plus
 
-        - procedure: serve
+        - procedure: merge
           ingredients:
             - death_rate_0_14
             - death_rate_15_29
@@ -512,4 +512,8 @@ cooking:
             - death_rate_45_59
             - death_rate_60plus
             - death_rate_all_ages
-          options: {}
+          result: datapoints-final
+        - procedure: procedure.filter_negatives
+          ingredients:
+              - datapoints-final
+          result: datapoints-final-filtered
