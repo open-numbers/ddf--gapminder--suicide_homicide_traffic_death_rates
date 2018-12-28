@@ -15,4 +15,5 @@ except KeyError:
 if __name__ == '__main__':
     chef = Chef.from_recipe(recipe_file)
     chef.add_config(ddf_dir=datasets_dir)
+    chef.add_config(procedure_dir='../recipes/procedures/')
     chef.run(serve=True, outpath=out_dir)
