@@ -62,3 +62,19 @@ def asdr(chef, ingredients, result, standard_population, age_group_mapping, age_
     new_data = {indicator_name: rate.dropna().reset_index()}
 
     return ProcedureResult(chef, result, ','.join(data_keys), new_data)
+
+
+@debuggable
+def filter_negatives(chef, ingredients, result):
+
+    assert len(ingredients) == 1, "`ingredients` parameter only accept exactly one ingredient"
+
+    ingredient = ingredients[0]
+    data = ingredient.compute()
+
+    new_data = dict()
+
+    for k, df in data.items():
+        new_data[k] = df[df[k] > 0]
+
+    return ProcedureResult(chef, result, ingredient.key, new_data)
