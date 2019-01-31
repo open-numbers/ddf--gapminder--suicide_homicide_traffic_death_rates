@@ -75,7 +75,7 @@ ingredients:
             name: "female"
 
 # serving:
-#     # - id: gbd-datapoints-0-14
+#     - id: gbd-datapoints-aligned-translated
 #     - id: gbd-datapoints-all-age
 
 cooking:

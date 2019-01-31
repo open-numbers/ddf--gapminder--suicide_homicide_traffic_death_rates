@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from ddf_utils.chef.ingredient import ProcedureResult, Ingredient
+from ddf_utils.chef.model.ingredient import *
 from ddf_utils.chef.helpers import create_dsk, debuggable
 import logging
 
@@ -37,9 +37,9 @@ def asdr(chef, ingredients, result, standard_population, age_group_mapping, age_
     std_pop = chef.dag.get_node(standard_population).evaluate()
 
     data = ingredient.compute()
-    data_keys = ingredient.key_to_list()
+    data_keys = ingredient.key.copy()
 
-    pop_data = std_pop.compute()[std_pop.key].set_index(std_pop.key)
+    pop_data = std_pop.get_data()[std_pop.key].set_index(std_pop.key)
     cdrs = list(data.values())[0]
 
     # if indicator_name == 'death_rate_0_14':
@@ -61,7 +61,7 @@ def asdr(chef, ingredients, result, standard_population, age_group_mapping, age_
     rate.columns = [indicator_name]
     new_data = {indicator_name: rate.dropna().reset_index()}
 
-    return ProcedureResult(chef, result, ','.join(data_keys), new_data)
+    return DataPointIngredient.from_procedure_result(result, data_keys, new_data)
 
 
 @debuggable
@@ -77,4 +77,4 @@ def filter_negatives(chef, ingredients, result):
     for k, df in data.items():
         new_data[k] = df[df[k] > 0]
 
-    return ProcedureResult(chef, result, ingredient.key, new_data)
+    return DataPointIngredient.from_procedure_result(result, ingredient.key, new_data)
