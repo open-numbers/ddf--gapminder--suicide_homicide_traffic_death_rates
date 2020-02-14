@@ -7,27 +7,47 @@
 
 
 info:
-    id: who-gbd-vip-dataset
+    id: gm-vip-dataset
     base:
-        - &who open-numbers/ddf--who--violence_injury_prevention
+        - &gm  open-numbers/ddf--gapminder--gapminder_world
         - &gbd open-numbers/ddf--ihme--death_cause_compact
-        - &geo open-numbers/ddf--gapminder--geo_entity_domain
+        - &geo open-numbers/ddf--open_numbers
     parameters:
-        - bridge_length: &bridge_length 10
+        - bridge_length: &bridge_length 5
 
 config:
     external_csv_dir: ../source
     procedure_dir: ./procedures
 
 ingredients:
-    - id: who-datapoints
-      dataset: *who
-      key: country, year, cause, sex
-      value: "*"
-    - id: who-countries
-      dataset: *who
-      key: country
-      value: "*"
+    - id: gm-datapoints
+      dataset: *gm
+      key: geo, time
+      value: &indicators
+          - murder_per_100000_people
+          - murdered_men_per_100000_people
+          - murdered_women_per_100000_people
+          - murdered_children_0_14_per_100000_people
+          - murdered_15_29_per_100000_people
+          - murdered_30_44_per_100000_people
+          - murdered_45_59_per_100000_people
+          - murdered_60plus_per_100000_people
+          - suicide_per_100000_people
+          - suicide_men_per_100000_people
+          - suicide_women_per_100000_people
+          - suicide_age_0_14_per_100000_people
+          - suicide_age_15_29_per_100000_people
+          - suicide_age_30_44_per_100000_people
+          - suicide_age_45_59_per_100000_people
+          - suicide_age_60plus_per_100000_people
+          - traffic_deaths_per_100000_people
+          - traffic_deaths_men_per_100000_people
+          - traffic_deaths_women_per_100000_people
+          - traffic_mortality_children_0_14_per_100000_people
+          - traffic_mortality_15_29_per_100000_people
+          - traffic_mortality_30_44_per_100000_people
+          - traffic_mortality_45_59_per_100000_people
+          - traffic_mortality_60plus_per_100000_people
     - id: gbd-datapoints
       dataset: *gbd
       key: sex, age, cause, location, year
@@ -39,7 +59,7 @@ ingredients:
       value: "*"
     - id: geo_synonyms
       dataset: *geo
-      key: country, synonym
+      key: geo, synonym
       value: "*"
     - id: std_pop
       data: std_pop.csv
@@ -55,67 +75,33 @@ ingredients:
           - concept: name
             name: Name
             concept_type: string
-    - id: cause_domain
-      key: cause
-      data:
-          - cause: traffic
-            name: Traffic
-          - cause: suicide
-            name: Suicide
-          - cause: homicide
-            name: Homicide
-    - id: sex_domain
-      key: sex
-      data:
-          - sex: "0"
-            name: "both sexes"
-          - sex: "1"
-            name: "male"
-          - sex: "2"
-            name: "female"
-
-# serving:
-#     - id: gbd-datapoints-aligned-translated
-#     - id: gbd-datapoints-all-age
 
 cooking:
-    concepts:
-        - procedure: extract_concepts
-          ingredients:
-            - death_rate_0_14
-            - death_rate_15_29
-            - death_rate_30_44
-            - death_rate_45_59
-            - death_rate_60plus
-            - death_rate_all_ages
-          result: concepts_extracted
-          options:
-              include_keys: true
-              overwrite:
-                  country: entity_domain
-                  cause: entity_domain
-                  sex: entity_domain
-                  year: time
-        - procedure: merge
-          ingredients:
-              - concepts_extracted
-              - concepts_hardcode
-          options:
-              deep: true
-          result: concepts-final
-
     entities:
-        - procedure: serve
-          ingredients:
-              - cause_domain
-              - sex_domain
         - procedure: serve
           ingredients:
               - geo-domain-country
           options:
               no_keep_sets: true
+    concepts:
+        - procedure: extract_concepts
+          ingredients:
+              - datapoints-final
+          result: concepts-extracted
+          options:
+              include_keys: true
+              overwrite:
+                  country: entity_domain
+                  time: time
+        - procedure: merge
+          ingredients:
+            - concepts-extracted
+            - concepts_hardcode
+          result: concepts-final
+          options:
+              deep: true
     datapoints:
-        # translating who/gbd to use geo entity domain
+        # translating gbd country to use geo entity domain
         - procedure: translate_column
           ingredients:
               - gbd-locations
@@ -124,31 +110,9 @@ cooking:
               dictionary:
                   base: geo_synonyms
                   key: synonym
-                  value: country
+                  value: geo
               column: medium_name
               target_column: geo
-        - procedure: translate_column
-          ingredients:
-              - who-countries
-          result: who-countries-aligned
-          options:
-              dictionary:
-                  base: geo_synonyms
-                  key: synonym
-                  value: country
-              column: name
-              target_column: geo
-
-        - procedure: translate_column
-          ingredients:
-            - who-datapoints
-          result: who-datapoints-aligned
-          options:
-              dictionary:
-                  base: who-countries-aligned
-                  key: country
-                  value: geo
-              column: country
 
         # filter all data needed for GBD
         - procedure: translate_column
@@ -200,7 +164,8 @@ cooking:
           result: gbd-datapoints-aligned-translated
           options:
               dictionary:
-                  "location": "country"
+                  "location": "geo"
+                  "year": "time"
 
         # ASDR for all age
         - procedure: filter
@@ -219,33 +184,26 @@ cooking:
           options:
               flatten_dimensions:
                   - age
+                  - sex
+                  - cause
               dictionary:
-                  "*": "{concept}_all_age"
+                  "*": "{concept}_{sex}_{cause}_all_age"
 
-        - procedure: filter
+        - procedure: translate_header
           ingredients:
-              - who-datapoints-aligned
-          result: who-datapoints-rate-all-age
+              - gbd-datapoints-all-age-flattened
+          result: gbd-datapoints-all-age-flattened-translated
           options:
-              item:
-                  - ratedall
-
-        - procedure: trend_bridge
-          ingredients: []
-          result: death_rate_all_ages
-          options:
-              bridge_start:
-                  ingredient: who-datapoints-rate-all-age
-                  column:
-                      - ratedall
-              bridge_end:
-                  ingredient: gbd-datapoints-all-age-flattened
-                  column:
-                      - deaths_rate_all_age
-              bridge_on: year
-              bridge_length: *bridge_length
-              target_column:
-                  -  death_rate_all_age
+              dictionary:
+                  deaths_rate_0_homicide_all_age: murder_per_100000_people
+                  deaths_rate_1_homicide_all_age: murdered_men_per_100000_people
+                  deaths_rate_2_homicide_all_age: murdered_women_per_100000_people
+                  deaths_rate_0_suicide_all_age: suicide_per_100000_people
+                  deaths_rate_1_suicide_all_age: suicide_men_per_100000_people
+                  deaths_rate_2_suicide_all_age: suicide_women_per_100000_people
+                  deaths_rate_0_traffic_all_age: traffic_deaths_per_100000_people
+                  deaths_rate_1_traffic_all_age: traffic_deaths_men_per_100000_people
+                  deaths_rate_2_traffic_all_age: traffic_deaths_women_per_100000_people
 
         # ASDR for age groups
         # 0-14
@@ -260,6 +218,8 @@ cooking:
                           - "1"
                           - "6"
                           - "7"
+                  sex:
+                      - "0"
         - procedure: procedure.asdr
           ingredients:
               - gbd-datapoints-0-14
@@ -273,30 +233,26 @@ cooking:
               age_column: "age"
               indicator_name: "death_rate_0_14"
 
-        - procedure: filter
+        - procedure: flatten
           ingredients:
-              - who-datapoints-aligned
-          result: who-datapoints-rate-0-14
+            - gbd-datapoints-0-14-adsr
+          result: gbd-datapoints-0-14-adsr-flattened
           options:
-              item:
-                  - rated_0_14
+              flatten_dimensions:
+                  - sex
+                  - cause
+              dictionary:
+                  "*": "{concept}_{cause}"
 
-        - procedure: trend_bridge
-          ingredients: []
-          result: death_rate_0_14
+        - procedure: translate_header
+          ingredients:
+            - gbd-datapoints-0-14-adsr-flattened
+          result: gbd-datapoints-0-14-adsr-flattened-translated
           options:
-              bridge_start:
-                  ingredient: who-datapoints-rate-0-14
-                  column:
-                      - rated_0_14
-              bridge_end:
-                  ingredient: gbd-datapoints-0-14-adsr
-                  column:
-                      - death_rate_0_14
-              bridge_on: year
-              bridge_length: *bridge_length
-              target_column:
-                  -  death_rate_0_14
+              dictionary:
+                  death_rate_0_14_homicide: murdered_children_0_14_per_100000_people
+                  death_rate_0_14_suicide: suicide_age_0_14_per_100000_people
+                  death_rate_0_14_traffic: traffic_mortality_children_0_14_per_100000_people
 
         # 15-29
         - procedure: filter
@@ -310,6 +266,8 @@ cooking:
                           - "8"
                           - "9"
                           - "10"
+                  sex:
+                      - "0"
         - procedure: procedure.asdr
           ingredients:
               - gbd-datapoints-15-29
@@ -323,30 +281,27 @@ cooking:
               age_column: "age"
               indicator_name: "death_rate_15_29"
 
-        - procedure: filter
+        - procedure: flatten
           ingredients:
-              - who-datapoints-aligned
-          result: who-datapoints-rate-15-29
+            - gbd-datapoints-15-29-adsr
+          result: gbd-datapoints-15-29-adsr-flattened
           options:
-              item:
-                  - rated_15_29
+              flatten_dimensions:
+                  - sex
+                  - cause
+              dictionary:
+                  "*": "{concept}_{cause}"
 
-        - procedure: trend_bridge
-          ingredients: []
-          result: death_rate_15_29
+        - procedure: translate_header
+          ingredients:
+            - gbd-datapoints-15-29-adsr-flattened
+          result: gbd-datapoints-15-29-adsr-flattened-translated
           options:
-              bridge_start:
-                  ingredient: who-datapoints-rate-15-29
-                  column:
-                      - rated_15_29
-              bridge_end:
-                  ingredient: gbd-datapoints-15-29-adsr
-                  column:
-                      - death_rate_15_29
-              bridge_on: year
-              bridge_length: *bridge_length
-              target_column:
-                  -  death_rate_15_29
+              dictionary:
+                  death_rate_15_29_homicide: murdered_15_29_per_100000_people
+                  death_rate_15_29_suicide: suicide_age_15_29_per_100000_people
+                  death_rate_15_29_traffic: traffic_mortality_15_29_per_100000_people
+
         # 30-44
         - procedure: filter
           ingredients:
@@ -359,6 +314,8 @@ cooking:
                           - "11"
                           - "12"
                           - "13"
+                  sex:
+                      - "0"
         - procedure: procedure.asdr
           ingredients:
               - gbd-datapoints-30-44
@@ -372,29 +329,27 @@ cooking:
               age_column: "age"
               indicator_name: "death_rate_30_44"
 
-        - procedure: filter
+        - procedure: flatten
           ingredients:
-              - who-datapoints-aligned
-          result: who-datapoints-rate-30-44
+            - gbd-datapoints-30-44-adsr
+          result: gbd-datapoints-30-44-adsr-flattened
           options:
-              item:
-                  - rated_30_44
-        - procedure: trend_bridge
-          ingredients: []
-          result: death_rate_30_44
+              flatten_dimensions:
+                  - sex
+                  - cause
+              dictionary:
+                  "*": "{concept}_{cause}"
+
+        - procedure: translate_header
+          ingredients:
+            - gbd-datapoints-30-44-adsr-flattened
+          result: gbd-datapoints-30-44-adsr-flattened-translated
           options:
-              bridge_start:
-                  ingredient: who-datapoints-rate-30-44
-                  column:
-                      - rated_30_44
-              bridge_end:
-                  ingredient: gbd-datapoints-30-44-adsr
-                  column:
-                      - death_rate_30_44
-              bridge_on: year
-              bridge_length: *bridge_length
-              target_column:
-                  -  death_rate_30_44
+              dictionary:
+                  death_rate_30_44_homicide: murdered_30_44_per_100000_people
+                  death_rate_30_44_suicide: suicide_age_30_44_per_100000_people
+                  death_rate_30_44_traffic: traffic_mortality_30_44_per_100000_people
+
         # 45-59
         - procedure: filter
           ingredients:
@@ -407,6 +362,8 @@ cooking:
                           - "14"
                           - "15"
                           - "16"
+                  sex:
+                      - "0"
         - procedure: procedure.asdr
           ingredients:
               - gbd-datapoints-45-59
@@ -420,30 +377,27 @@ cooking:
               age_column: "age"
               indicator_name: "death_rate_45_59"
 
-        - procedure: filter
+        - procedure: flatten
           ingredients:
-              - who-datapoints-aligned
-          result: who-datapoints-rate-45-59
+            - gbd-datapoints-45-59-adsr
+          result: gbd-datapoints-45-59-adsr-flattened
           options:
-              item:
-                  - rated_45_59
+              flatten_dimensions:
+                  - sex
+                  - cause
+              dictionary:
+                  "*": "{concept}_{cause}"
 
-        - procedure: trend_bridge
-          ingredients: []
-          result: death_rate_45_59
+        - procedure: translate_header
+          ingredients:
+            - gbd-datapoints-45-59-adsr-flattened
+          result: gbd-datapoints-45-59-adsr-flattened-translated
           options:
-              bridge_start:
-                  ingredient: who-datapoints-rate-45-59
-                  column:
-                      - rated_45_59
-              bridge_end:
-                  ingredient: gbd-datapoints-45-59-adsr
-                  column:
-                      - death_rate_45_59
-              bridge_on: year
-              bridge_length: *bridge_length
-              target_column:
-                  -  death_rate_45_59
+              dictionary:
+                  death_rate_45_59_homicide: murdered_45_59_per_100000_people
+                  death_rate_45_59_suicide: suicide_age_45_59_per_100000_people
+                  death_rate_45_59_traffic: traffic_mortality_45_59_per_100000_people
+
         # 60plus
         - procedure: filter
           ingredients:
@@ -479,41 +433,53 @@ cooking:
               age_column: "age"
               indicator_name: "death_rate_60plus"
 
-        - procedure: filter
+        - procedure: flatten
           ingredients:
-              - who-datapoints-aligned
-          result: who-datapoints-rate-60plus
+            - gbd-datapoints-60plus-adsr
+          result: gbd-datapoints-60plus-adsr-flattened
           options:
-              item:
-                  - rated_60
+              flatten_dimensions:
+                  - sex
+                  - cause
+              dictionary:
+                  "*": "{concept}_{cause}"
 
-        - procedure: trend_bridge
-          ingredients: []
-          result: death_rate_60plus
+        - procedure: translate_header
+          ingredients:
+            - gbd-datapoints-60plus-adsr-flattened
+          result: gbd-datapoints-60plus-adsr-flattened-translated
           options:
-              bridge_start:
-                  ingredient: who-datapoints-rate-60plus
-                  column:
-                      - rated_60
-              bridge_end:
-                  ingredient: gbd-datapoints-60plus-adsr
-                  column:
-                      - death_rate_60plus
-              bridge_on: year
-              bridge_length: *bridge_length
-              target_column:
-                  -  death_rate_60plus
+              dictionary:
+                  death_rate_60plus_homicide: murdered_60plus_per_100000_people
+                  death_rate_60plus_suicide: suicide_age_60plus_per_100000_people
+                  death_rate_60plus_traffic: traffic_mortality_60plus_per_100000_people
+
 
         - procedure: merge
           ingredients:
-            - death_rate_0_14
-            - death_rate_15_29
-            - death_rate_30_44
-            - death_rate_45_59
-            - death_rate_60plus
-            - death_rate_all_ages
+              - gbd-datapoints-all-age-flattened-translated
+              - gbd-datapoints-0-14-adsr-flattened-translated
+              - gbd-datapoints-15-29-adsr-flattened-translated
+              - gbd-datapoints-30-44-adsr-flattened-translated
+              - gbd-datapoints-45-59-adsr-flattened-translated
+              - gbd-datapoints-60plus-adsr-flattened-translated
+          result: gbd-datapoints-adsr-merged
+
+        - procedure: trend_bridge
+          ingredients: []
           result: datapoints-final
-        - procedure: procedure.filter_negatives
+          options:
+              bridge_start:
+                  ingredient: gm-datapoints
+                  column: *indicators
+              bridge_end:
+                  ingredient: gbd-datapoints-adsr-merged
+                  column: *indicators
+              bridge_on: time
+              bridge_length: *bridge_length
+              target_column: *indicators
+        - procedure: serve
           ingredients:
               - datapoints-final
-          result: datapoints-final-filtered
+          options:
+              digits: 4
