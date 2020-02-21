@@ -12,7 +12,7 @@
         "open-numbers/ddf--ihme--death_cause_compact",
         "open-numbers/ddf--gapminder--geo_entity_domain"
     ],
-    "created": "2019-08-18T12:46:42.656946+00:00",
+    "created": "2020-02-21T02:38:51.948271+00:00",
     "id": "who-gbd-vip-dataset",
     "translations": [],
     "resources": [
@@ -25,237 +25,1011 @@
                         "name": "concept"
                     },
                     {
+                        "name": "color"
+                    },
+                    {
                         "name": "concept_type"
                     },
                     {
+                        "name": "description"
+                    },
+                    {
+                        "name": "description_long"
+                    },
+                    {
+                        "name": "domain"
+                    },
+                    {
+                        "name": "drill_up"
+                    },
+                    {
+                        "name": "indicator_url"
+                    },
+                    {
                         "name": "name"
+                    },
+                    {
+                        "name": "name_catalog"
+                    },
+                    {
+                        "name": "name_short"
+                    },
+                    {
+                        "name": "scales"
+                    },
+                    {
+                        "name": "source"
+                    },
+                    {
+                        "name": "source_long"
+                    },
+                    {
+                        "name": "source_url"
+                    },
+                    {
+                        "name": "tags"
                     }
                 ],
                 "primaryKey": "concept"
             }
         },
         {
-            "name": "ddf--datapoints--death_rate_0_14--by--country--year--cause--sex",
-            "path": "ddf--datapoints--death_rate_0_14--by--country--year--cause--sex.csv",
+            "name": "ddf--datapoints--burns_deaths_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--burns_deaths_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "burns_deaths_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--car_deaths_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--car_deaths_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "car_deaths_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--drownings_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--drownings_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "drownings_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--falls_deaths_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--falls_deaths_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "falls_deaths_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--motorcycle_deaths_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--motorcycle_deaths_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "motorcycle_deaths_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--murder_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--murder_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "murder_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--murdered_15_29_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--murdered_15_29_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "murdered_15_29_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--murdered_30_44_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--murdered_30_44_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "murdered_30_44_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--murdered_45_59_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--murdered_45_59_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "murdered_45_59_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--murdered_60plus_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--murdered_60plus_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "murdered_60plus_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--murdered_children_0_14_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--murdered_children_0_14_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "murdered_children_0_14_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--murdered_men_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--murdered_men_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "murdered_men_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--murdered_women_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--murdered_women_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "murdered_women_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--poisonings_deaths_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--poisonings_deaths_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "poisonings_deaths_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--suicide_age_0_14_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--suicide_age_0_14_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "suicide_age_0_14_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--suicide_age_15_29_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--suicide_age_15_29_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "suicide_age_15_29_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--suicide_age_30_44_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--suicide_age_30_44_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "suicide_age_30_44_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--suicide_age_45_59_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--suicide_age_45_59_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "suicide_age_45_59_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--suicide_age_60plus_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--suicide_age_60plus_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "suicide_age_60plus_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--suicide_men_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--suicide_men_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "suicide_men_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--suicide_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--suicide_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "suicide_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--suicide_women_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--suicide_women_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "suicide_women_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--traffic_deaths_men_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--traffic_deaths_men_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "traffic_deaths_men_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--traffic_deaths_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--traffic_deaths_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "traffic_deaths_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--traffic_deaths_women_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--traffic_deaths_women_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "traffic_deaths_women_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--traffic_mortality_15_29_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--traffic_mortality_15_29_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "traffic_mortality_15_29_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--traffic_mortality_30_44_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--traffic_mortality_30_44_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "traffic_mortality_30_44_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--traffic_mortality_45_59_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--traffic_mortality_45_59_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "traffic_mortality_45_59_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--traffic_mortality_60plus_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--traffic_mortality_60plus_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "traffic_mortality_60plus_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--traffic_mortality_children_0_14_per_100000_people--by--geo--time",
+            "path": "ddf--datapoints--traffic_mortality_children_0_14_per_100000_people--by--geo--time.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "time"
+                    },
+                    {
+                        "name": "traffic_mortality_children_0_14_per_100000_people"
+                    }
+                ],
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ]
+            }
+        },
+        {
+            "name": "ddf--entities--geo--country",
+            "path": "ddf--entities--geo--country.csv",
             "schema": {
                 "fields": [
                     {
                         "name": "country"
                     },
                     {
-                        "name": "year"
+                        "name": "g77_and_oecd_countries"
                     },
                     {
-                        "name": "cause"
+                        "name": "income_groups"
                     },
                     {
-                        "name": "sex"
+                        "name": "is--country"
                     },
                     {
-                        "name": "death_rate_0_14"
-                    }
-                ],
-                "primaryKey": [
-                    "country",
-                    "year",
-                    "cause",
-                    "sex"
-                ]
-            }
-        },
-        {
-            "name": "ddf--datapoints--death_rate_15_29--by--country--year--cause--sex",
-            "path": "ddf--datapoints--death_rate_15_29--by--country--year--cause--sex.csv",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "country"
+                        "name": "iso3166_1_alpha2"
                     },
                     {
-                        "name": "year"
+                        "name": "iso3166_1_alpha3"
                     },
                     {
-                        "name": "cause"
+                        "name": "iso3166_1_numeric"
                     },
                     {
-                        "name": "sex"
+                        "name": "iso3166_2"
                     },
                     {
-                        "name": "death_rate_15_29"
-                    }
-                ],
-                "primaryKey": [
-                    "country",
-                    "year",
-                    "cause",
-                    "sex"
-                ]
-            }
-        },
-        {
-            "name": "ddf--datapoints--death_rate_30_44--by--country--year--cause--sex",
-            "path": "ddf--datapoints--death_rate_30_44--by--country--year--cause--sex.csv",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "country"
+                        "name": "landlocked"
                     },
                     {
-                        "name": "year"
+                        "name": "latitude"
                     },
                     {
-                        "name": "cause"
+                        "name": "longitude"
                     },
                     {
-                        "name": "sex"
-                    },
-                    {
-                        "name": "death_rate_30_44"
-                    }
-                ],
-                "primaryKey": [
-                    "country",
-                    "year",
-                    "cause",
-                    "sex"
-                ]
-            }
-        },
-        {
-            "name": "ddf--datapoints--death_rate_45_59--by--country--year--cause--sex",
-            "path": "ddf--datapoints--death_rate_45_59--by--country--year--cause--sex.csv",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "country"
-                    },
-                    {
-                        "name": "year"
-                    },
-                    {
-                        "name": "cause"
-                    },
-                    {
-                        "name": "sex"
-                    },
-                    {
-                        "name": "death_rate_45_59"
-                    }
-                ],
-                "primaryKey": [
-                    "country",
-                    "year",
-                    "cause",
-                    "sex"
-                ]
-            }
-        },
-        {
-            "name": "ddf--datapoints--death_rate_60plus--by--country--year--cause--sex",
-            "path": "ddf--datapoints--death_rate_60plus--by--country--year--cause--sex.csv",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "country"
-                    },
-                    {
-                        "name": "year"
-                    },
-                    {
-                        "name": "cause"
-                    },
-                    {
-                        "name": "sex"
-                    },
-                    {
-                        "name": "death_rate_60plus"
-                    }
-                ],
-                "primaryKey": [
-                    "country",
-                    "year",
-                    "cause",
-                    "sex"
-                ]
-            }
-        },
-        {
-            "name": "ddf--datapoints--death_rate_all_age--by--country--year--cause--sex",
-            "path": "ddf--datapoints--death_rate_all_age--by--country--year--cause--sex.csv",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "country"
-                    },
-                    {
-                        "name": "year"
-                    },
-                    {
-                        "name": "cause"
-                    },
-                    {
-                        "name": "sex"
-                    },
-                    {
-                        "name": "death_rate_all_age"
-                    }
-                ],
-                "primaryKey": [
-                    "country",
-                    "year",
-                    "cause",
-                    "sex"
-                ]
-            }
-        },
-        {
-            "name": "ddf--entities--cause",
-            "path": "ddf--entities--cause.csv",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "cause"
+                        "name": "main_religion_2008"
                     },
                     {
                         "name": "name"
-                    }
-                ],
-                "primaryKey": "cause"
-            }
-        },
-        {
-            "name": "ddf--entities--country",
-            "path": "ddf--entities--country.csv",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "country"
                     },
                     {
-                        "name": "name"
+                        "name": "un_state"
+                    },
+                    {
+                        "name": "unicef_region"
+                    },
+                    {
+                        "name": "unicode_region_subtag"
+                    },
+                    {
+                        "name": "world_4region"
+                    },
+                    {
+                        "name": "world_6region"
                     }
                 ],
                 "primaryKey": "country"
             }
         },
         {
-            "name": "ddf--entities--sex",
-            "path": "ddf--entities--sex.csv",
+            "name": "ddf--entities--geo--g77_and_oecd_countries",
+            "path": "ddf--entities--geo--g77_and_oecd_countries.csv",
             "schema": {
                 "fields": [
                     {
-                        "name": "sex"
+                        "name": "g77_and_oecd_countries"
+                    },
+                    {
+                        "name": "is--g77_and_oecd_countries"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "rank"
+                    }
+                ],
+                "primaryKey": "g77_and_oecd_countries"
+            }
+        },
+        {
+            "name": "ddf--entities--geo--global",
+            "path": "ddf--entities--geo--global.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "is--global"
+                    },
+                    {
+                        "name": "latitude"
+                    },
+                    {
+                        "name": "longitude"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "topojson"
+                    },
+                    {
+                        "name": "unicode_region_subtag"
+                    }
+                ],
+                "primaryKey": "global"
+            }
+        },
+        {
+            "name": "ddf--entities--geo--income_groups",
+            "path": "ddf--entities--geo--income_groups.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "income_groups"
+                    },
+                    {
+                        "name": "is--income_groups"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "rank"
+                    }
+                ],
+                "primaryKey": "income_groups"
+            }
+        },
+        {
+            "name": "ddf--entities--geo--landlocked",
+            "path": "ddf--entities--geo--landlocked.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "landlocked"
+                    },
+                    {
+                        "name": "is--landlocked"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "rank"
+                    }
+                ],
+                "primaryKey": "landlocked"
+            }
+        },
+        {
+            "name": "ddf--entities--geo--main_religion_2008",
+            "path": "ddf--entities--geo--main_religion_2008.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "main_religion_2008"
+                    },
+                    {
+                        "name": "is--main_religion_2008"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "rank"
+                    }
+                ],
+                "primaryKey": "main_religion_2008"
+            }
+        },
+        {
+            "name": "ddf--entities--geo--unicef_region",
+            "path": "ddf--entities--geo--unicef_region.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "unicef_region"
+                    },
+                    {
+                        "name": "is--unicef_region"
                     },
                     {
                         "name": "name"
                     }
                 ],
-                "primaryKey": "sex"
+                "primaryKey": "unicef_region"
+            }
+        },
+        {
+            "name": "ddf--entities--geo--world_4region",
+            "path": "ddf--entities--geo--world_4region.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "world_4region"
+                    },
+                    {
+                        "name": "color"
+                    },
+                    {
+                        "name": "description"
+                    },
+                    {
+                        "name": "is--world_4region"
+                    },
+                    {
+                        "name": "latitude"
+                    },
+                    {
+                        "name": "longitude"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "name_long"
+                    },
+                    {
+                        "name": "name_short"
+                    },
+                    {
+                        "name": "rank"
+                    },
+                    {
+                        "name": "shape_lores_svg"
+                    }
+                ],
+                "primaryKey": "world_4region"
+            }
+        },
+        {
+            "name": "ddf--entities--geo--world_6region",
+            "path": "ddf--entities--geo--world_6region.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "world_6region"
+                    },
+                    {
+                        "name": "is--world_6region"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "name_long"
+                    },
+                    {
+                        "name": "name_short"
+                    },
+                    {
+                        "name": "rank"
+                    },
+                    {
+                        "name": "shape_lores_svg"
+                    }
+                ],
+                "primaryKey": "world_6region"
+            }
+        },
+        {
+            "name": "ddf--entities--geo",
+            "path": "ddf--entities--geo.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "iso3166_1_alpha2"
+                    },
+                    {
+                        "name": "iso3166_1_alpha3"
+                    },
+                    {
+                        "name": "iso3166_1_numeric"
+                    },
+                    {
+                        "name": "landlocked"
+                    },
+                    {
+                        "name": "latitude"
+                    },
+                    {
+                        "name": "longitude"
+                    },
+                    {
+                        "name": "main_religion_2008"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "un_state"
+                    },
+                    {
+                        "name": "unicode_region_subtag"
+                    },
+                    {
+                        "name": "world_4region"
+                    },
+                    {
+                        "name": "world_6region"
+                    }
+                ],
+                "primaryKey": "geo"
             }
         }
     ],
     "ddfSchema": {
         "concepts": [
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "color",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
             {
                 "primaryKey": [
                     "concept"
@@ -269,7 +1043,115 @@
                 "primaryKey": [
                     "concept"
                 ],
+                "value": "description",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "description_long",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "domain",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "drill_up",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "indicator_url",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
                 "value": "name",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "name_catalog",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "name_short",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "scales",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "source",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "source_long",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "source_url",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "tags",
                 "resources": [
                     "ddf--concepts"
                 ]
@@ -278,11 +1160,427 @@
         "entities": [
             {
                 "primaryKey": [
-                    "cause"
+                    "geo"
                 ],
-                "value": "name",
+                "value": "color",
                 "resources": [
-                    "ddf--entities--cause"
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_4region"
+                ],
+                "value": "color",
+                "resources": [
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "description",
+                "resources": [
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_4region"
+                ],
+                "value": "description",
+                "resources": [
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "g77_and_oecd_countries",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "g77_and_oecd_countries",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "income_groups",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "income_groups",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "is--country",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--country",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "g77_and_oecd_countries"
+                ],
+                "value": "is--g77_and_oecd_countries",
+                "resources": [
+                    "ddf--entities--geo--g77_and_oecd_countries"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--g77_and_oecd_countries",
+                "resources": [
+                    "ddf--entities--geo--g77_and_oecd_countries"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--global",
+                "resources": [
+                    "ddf--entities--geo--global"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global"
+                ],
+                "value": "is--global",
+                "resources": [
+                    "ddf--entities--geo--global"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--income_groups",
+                "resources": [
+                    "ddf--entities--geo--income_groups"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "income_groups"
+                ],
+                "value": "is--income_groups",
+                "resources": [
+                    "ddf--entities--geo--income_groups"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--landlocked",
+                "resources": [
+                    "ddf--entities--geo--landlocked"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "landlocked"
+                ],
+                "value": "is--landlocked",
+                "resources": [
+                    "ddf--entities--geo--landlocked"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--main_religion_2008",
+                "resources": [
+                    "ddf--entities--geo--main_religion_2008"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "main_religion_2008"
+                ],
+                "value": "is--main_religion_2008",
+                "resources": [
+                    "ddf--entities--geo--main_religion_2008"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--unicef_region",
+                "resources": [
+                    "ddf--entities--geo--unicef_region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "unicef_region"
+                ],
+                "value": "is--unicef_region",
+                "resources": [
+                    "ddf--entities--geo--unicef_region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--world_4region",
+                "resources": [
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_4region"
+                ],
+                "value": "is--world_4region",
+                "resources": [
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--world_6region",
+                "resources": [
+                    "ddf--entities--geo--world_6region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_6region"
+                ],
+                "value": "is--world_6region",
+                "resources": [
+                    "ddf--entities--geo--world_6region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "iso3166_1_alpha2",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "iso3166_1_alpha2",
+                "resources": [
+                    "ddf--entities--geo",
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "iso3166_1_alpha3",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "iso3166_1_alpha3",
+                "resources": [
+                    "ddf--entities--geo",
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "iso3166_1_numeric",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "iso3166_1_numeric",
+                "resources": [
+                    "ddf--entities--geo",
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "iso3166_2",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "iso3166_2",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "landlocked",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "landlocked",
+                "resources": [
+                    "ddf--entities--geo",
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "latitude",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "latitude",
+                "resources": [
+                    "ddf--entities--geo",
+                    "ddf--entities--geo--country",
+                    "ddf--entities--geo--global",
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global"
+                ],
+                "value": "latitude",
+                "resources": [
+                    "ddf--entities--geo--global"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_4region"
+                ],
+                "value": "latitude",
+                "resources": [
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "longitude",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "longitude",
+                "resources": [
+                    "ddf--entities--geo",
+                    "ddf--entities--geo--country",
+                    "ddf--entities--geo--global",
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global"
+                ],
+                "value": "longitude",
+                "resources": [
+                    "ddf--entities--geo--global"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_4region"
+                ],
+                "value": "longitude",
+                "resources": [
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "main_religion_2008",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "main_religion_2008",
+                "resources": [
+                    "ddf--entities--geo",
+                    "ddf--entities--geo--country"
                 ]
             },
             {
@@ -291,90 +1589,973 @@
                 ],
                 "value": "name",
                 "resources": [
-                    "ddf--entities--country"
+                    "ddf--entities--geo--country"
                 ]
             },
             {
                 "primaryKey": [
-                    "sex"
+                    "g77_and_oecd_countries"
                 ],
                 "value": "name",
                 "resources": [
-                    "ddf--entities--sex"
+                    "ddf--entities--geo--g77_and_oecd_countries"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo",
+                    "ddf--entities--geo--country",
+                    "ddf--entities--geo--g77_and_oecd_countries",
+                    "ddf--entities--geo--global",
+                    "ddf--entities--geo--income_groups",
+                    "ddf--entities--geo--landlocked",
+                    "ddf--entities--geo--main_religion_2008",
+                    "ddf--entities--geo--unicef_region",
+                    "ddf--entities--geo--world_4region",
+                    "ddf--entities--geo--world_6region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo--global"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "income_groups"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo--income_groups"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "landlocked"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo--landlocked"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "main_religion_2008"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo--main_religion_2008"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "unicef_region"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo--unicef_region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_4region"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_6region"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo--world_6region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "name_long",
+                "resources": [
+                    "ddf--entities--geo--world_4region",
+                    "ddf--entities--geo--world_6region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_4region"
+                ],
+                "value": "name_long",
+                "resources": [
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_6region"
+                ],
+                "value": "name_long",
+                "resources": [
+                    "ddf--entities--geo--world_6region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "name_short",
+                "resources": [
+                    "ddf--entities--geo--world_4region",
+                    "ddf--entities--geo--world_6region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_4region"
+                ],
+                "value": "name_short",
+                "resources": [
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_6region"
+                ],
+                "value": "name_short",
+                "resources": [
+                    "ddf--entities--geo--world_6region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "g77_and_oecd_countries"
+                ],
+                "value": "rank",
+                "resources": [
+                    "ddf--entities--geo--g77_and_oecd_countries"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "rank",
+                "resources": [
+                    "ddf--entities--geo--g77_and_oecd_countries",
+                    "ddf--entities--geo--income_groups",
+                    "ddf--entities--geo--landlocked",
+                    "ddf--entities--geo--main_religion_2008",
+                    "ddf--entities--geo--world_4region",
+                    "ddf--entities--geo--world_6region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "income_groups"
+                ],
+                "value": "rank",
+                "resources": [
+                    "ddf--entities--geo--income_groups"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "landlocked"
+                ],
+                "value": "rank",
+                "resources": [
+                    "ddf--entities--geo--landlocked"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "main_religion_2008"
+                ],
+                "value": "rank",
+                "resources": [
+                    "ddf--entities--geo--main_religion_2008"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_4region"
+                ],
+                "value": "rank",
+                "resources": [
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_6region"
+                ],
+                "value": "rank",
+                "resources": [
+                    "ddf--entities--geo--world_6region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "shape_lores_svg",
+                "resources": [
+                    "ddf--entities--geo--world_4region",
+                    "ddf--entities--geo--world_6region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_4region"
+                ],
+                "value": "shape_lores_svg",
+                "resources": [
+                    "ddf--entities--geo--world_4region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "world_6region"
+                ],
+                "value": "shape_lores_svg",
+                "resources": [
+                    "ddf--entities--geo--world_6region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "topojson",
+                "resources": [
+                    "ddf--entities--geo--global"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global"
+                ],
+                "value": "topojson",
+                "resources": [
+                    "ddf--entities--geo--global"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "un_state",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "un_state",
+                "resources": [
+                    "ddf--entities--geo",
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "unicef_region",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "unicef_region",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "unicode_region_subtag",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "unicode_region_subtag",
+                "resources": [
+                    "ddf--entities--geo",
+                    "ddf--entities--geo--country",
+                    "ddf--entities--geo--global"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global"
+                ],
+                "value": "unicode_region_subtag",
+                "resources": [
+                    "ddf--entities--geo--global"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "world_4region",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "world_4region",
+                "resources": [
+                    "ddf--entities--geo",
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country"
+                ],
+                "value": "world_6region",
+                "resources": [
+                    "ddf--entities--geo--country"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "world_6region",
+                "resources": [
+                    "ddf--entities--geo",
+                    "ddf--entities--geo--country"
                 ]
             }
         ],
         "datapoints": [
             {
                 "primaryKey": [
-                    "cause",
                     "country",
-                    "sex",
-                    "year"
+                    "time"
                 ],
-                "value": "death_rate_0_14",
+                "value": "burns_deaths_per_100000_people",
                 "resources": [
-                    "ddf--datapoints--death_rate_0_14--by--country--year--cause--sex"
+                    "ddf--datapoints--burns_deaths_per_100000_people--by--geo--time"
                 ]
             },
             {
                 "primaryKey": [
-                    "cause",
-                    "country",
-                    "sex",
-                    "year"
+                    "geo",
+                    "time"
                 ],
-                "value": "death_rate_15_29",
+                "value": "burns_deaths_per_100000_people",
                 "resources": [
-                    "ddf--datapoints--death_rate_15_29--by--country--year--cause--sex"
+                    "ddf--datapoints--burns_deaths_per_100000_people--by--geo--time"
                 ]
             },
             {
                 "primaryKey": [
-                    "cause",
                     "country",
-                    "sex",
-                    "year"
+                    "time"
                 ],
-                "value": "death_rate_30_44",
+                "value": "car_deaths_per_100000_people",
                 "resources": [
-                    "ddf--datapoints--death_rate_30_44--by--country--year--cause--sex"
+                    "ddf--datapoints--car_deaths_per_100000_people--by--geo--time"
                 ]
             },
             {
                 "primaryKey": [
-                    "cause",
-                    "country",
-                    "sex",
-                    "year"
+                    "geo",
+                    "time"
                 ],
-                "value": "death_rate_45_59",
+                "value": "car_deaths_per_100000_people",
                 "resources": [
-                    "ddf--datapoints--death_rate_45_59--by--country--year--cause--sex"
+                    "ddf--datapoints--car_deaths_per_100000_people--by--geo--time"
                 ]
             },
             {
                 "primaryKey": [
-                    "cause",
                     "country",
-                    "sex",
-                    "year"
+                    "time"
                 ],
-                "value": "death_rate_60plus",
+                "value": "drownings_per_100000_people",
                 "resources": [
-                    "ddf--datapoints--death_rate_60plus--by--country--year--cause--sex"
+                    "ddf--datapoints--drownings_per_100000_people--by--geo--time"
                 ]
             },
             {
                 "primaryKey": [
-                    "cause",
-                    "country",
-                    "sex",
-                    "year"
+                    "geo",
+                    "time"
                 ],
-                "value": "death_rate_all_age",
+                "value": "drownings_per_100000_people",
                 "resources": [
-                    "ddf--datapoints--death_rate_all_age--by--country--year--cause--sex"
+                    "ddf--datapoints--drownings_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "falls_deaths_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--falls_deaths_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "falls_deaths_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--falls_deaths_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "motorcycle_deaths_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--motorcycle_deaths_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "motorcycle_deaths_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--motorcycle_deaths_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "murder_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murder_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "murder_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murder_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "murdered_15_29_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murdered_15_29_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "murdered_15_29_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murdered_15_29_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "murdered_30_44_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murdered_30_44_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "murdered_30_44_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murdered_30_44_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "murdered_45_59_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murdered_45_59_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "murdered_45_59_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murdered_45_59_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "murdered_60plus_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murdered_60plus_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "murdered_60plus_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murdered_60plus_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "murdered_children_0_14_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murdered_children_0_14_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "murdered_children_0_14_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murdered_children_0_14_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "murdered_men_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murdered_men_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "murdered_men_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murdered_men_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "murdered_women_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murdered_women_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "murdered_women_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--murdered_women_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "poisonings_deaths_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--poisonings_deaths_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "poisonings_deaths_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--poisonings_deaths_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "suicide_age_0_14_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_age_0_14_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "suicide_age_0_14_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_age_0_14_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "suicide_age_15_29_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_age_15_29_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "suicide_age_15_29_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_age_15_29_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "suicide_age_30_44_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_age_30_44_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "suicide_age_30_44_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_age_30_44_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "suicide_age_45_59_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_age_45_59_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "suicide_age_45_59_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_age_45_59_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "suicide_age_60plus_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_age_60plus_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "suicide_age_60plus_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_age_60plus_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "suicide_men_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_men_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "suicide_men_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_men_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "suicide_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "suicide_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "suicide_women_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_women_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "suicide_women_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--suicide_women_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "traffic_deaths_men_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_deaths_men_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "traffic_deaths_men_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_deaths_men_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "traffic_deaths_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_deaths_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "traffic_deaths_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_deaths_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "traffic_deaths_women_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_deaths_women_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "traffic_deaths_women_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_deaths_women_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "traffic_mortality_15_29_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_mortality_15_29_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "traffic_mortality_15_29_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_mortality_15_29_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "traffic_mortality_30_44_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_mortality_30_44_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "traffic_mortality_30_44_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_mortality_30_44_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "traffic_mortality_45_59_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_mortality_45_59_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "traffic_mortality_45_59_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_mortality_45_59_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "traffic_mortality_60plus_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_mortality_60plus_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "traffic_mortality_60plus_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_mortality_60plus_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country",
+                    "time"
+                ],
+                "value": "traffic_mortality_children_0_14_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_mortality_children_0_14_per_100000_people--by--geo--time"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "traffic_mortality_children_0_14_per_100000_people",
+                "resources": [
+                    "ddf--datapoints--traffic_mortality_children_0_14_per_100000_people--by--geo--time"
                 ]
             }
         ],
