@@ -12,7 +12,7 @@
         "open-numbers/ddf--ihme--death_cause_compact",
         "open-numbers/ddf--gapminder--geo_entity_domain"
     ],
-    "created": "2020-02-21T02:38:51.948271+00:00",
+    "created": "2024-08-08T07:08:10.493378+00:00",
     "id": "who-gbd-vip-dataset",
     "translations": [],
     "resources": [
@@ -70,7 +70,9 @@
                         "name": "tags"
                     }
                 ],
-                "primaryKey": "concept"
+                "primaryKey": [
+                    "concept"
+                ]
             }
         },
         {
@@ -763,7 +765,9 @@
                         "name": "world_6region"
                     }
                 ],
-                "primaryKey": "country"
+                "primaryKey": [
+                    "country"
+                ]
             }
         },
         {
@@ -784,7 +788,9 @@
                         "name": "rank"
                     }
                 ],
-                "primaryKey": "g77_and_oecd_countries"
+                "primaryKey": [
+                    "g77_and_oecd_countries"
+                ]
             }
         },
         {
@@ -814,7 +820,9 @@
                         "name": "unicode_region_subtag"
                     }
                 ],
-                "primaryKey": "global"
+                "primaryKey": [
+                    "global"
+                ]
             }
         },
         {
@@ -835,7 +843,9 @@
                         "name": "rank"
                     }
                 ],
-                "primaryKey": "income_groups"
+                "primaryKey": [
+                    "income_groups"
+                ]
             }
         },
         {
@@ -856,7 +866,9 @@
                         "name": "rank"
                     }
                 ],
-                "primaryKey": "landlocked"
+                "primaryKey": [
+                    "landlocked"
+                ]
             }
         },
         {
@@ -877,7 +889,9 @@
                         "name": "rank"
                     }
                 ],
-                "primaryKey": "main_religion_2008"
+                "primaryKey": [
+                    "main_religion_2008"
+                ]
             }
         },
         {
@@ -895,7 +909,9 @@
                         "name": "name"
                     }
                 ],
-                "primaryKey": "unicef_region"
+                "primaryKey": [
+                    "unicef_region"
+                ]
             }
         },
         {
@@ -937,7 +953,9 @@
                         "name": "shape_lores_svg"
                     }
                 ],
-                "primaryKey": "world_4region"
+                "primaryKey": [
+                    "world_4region"
+                ]
             }
         },
         {
@@ -967,7 +985,9 @@
                         "name": "shape_lores_svg"
                     }
                 ],
-                "primaryKey": "world_6region"
+                "primaryKey": [
+                    "world_6region"
+                ]
             }
         },
         {
@@ -1015,7 +1035,9 @@
                         "name": "world_6region"
                     }
                 ],
-                "primaryKey": "geo"
+                "primaryKey": [
+                    "geo"
+                ]
             }
         }
     ],
